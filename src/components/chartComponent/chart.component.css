@@ -11,10 +11,7 @@
 
 @font-face {
     font-family: 'Circular Std';
-    src: url('../../../../circular-std-medium-500.ttf') format('woff2'),
-         url('../../../../circular-std-medium-500.ttf') format('woff'),
-         url('../../../../circular-std-medium-500.ttf') format('opentype'),
-         url('../../../../circular-std-medium-500.ttf') format('truetype');
+    src: url('../../../public/circular-std-medium-500.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
