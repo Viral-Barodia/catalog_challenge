@@ -2,7 +2,7 @@ import './chart.component.css';
 import React, { useEffect, useState } from 'react';
 import { AreaChart, Area, CartesianGrid, Tooltip, Bar, BarChart } from 'recharts';
 import { fetchData } from '../../services/financeData.service';
-import Swal from 'sweetalert2';
+import { FireErrorToast } from '../../services/fireToast.service';
 
 function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {
@@ -39,11 +39,7 @@ export default function ChartComponent() {
                 setChangedValue(data.changedValue);
             })
             .catch((error) => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'The third-party API has malfunctioned!',
-                });
+                FireErrorToast(error.code, null);
             })
         }
     },[activeInterval,activeDuration]);

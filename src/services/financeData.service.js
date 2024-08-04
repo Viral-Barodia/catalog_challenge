@@ -1,5 +1,6 @@
 import { environment } from "../environment/environment";
 import axios from "axios";
+import { FireErrorToast } from "./fireToast.service";
 
 export const fetchData = async(params={ interval: '', range: '' }) => {
     try {
@@ -22,10 +23,12 @@ export const fetchData = async(params={ interval: '', range: '' }) => {
             };
         } else {
             console.error(response.data);
+            FireErrorToast();
             return null;
         }
     } catch (error) {
         console.error(error);
+        FireErrorToast(error.code, error.description);
         return null;
     }
 };
