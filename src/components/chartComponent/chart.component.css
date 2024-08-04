@@ -34,7 +34,7 @@ body{
     top: 60px;
     left: 60px;
     gap: 0px;
-    opacity: 0px;
+    opacity: 1;
 }
 
 .current-price {
